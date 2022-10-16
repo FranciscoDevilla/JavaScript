@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        *{
+            margin: auto;
+            padding: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header > h1{
+            background-image: linear-gradient(to bottom, black,rgba(0, 0, 0, 0.897),rgba(0, 0, 0, 0.850),rgb(61, 61, 61),rgba(90, 90, 90, 0.633), rgb(207, 204, 204));
+            padding: 25px;
+            margin: 0px;
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: rgb(207, 204, 204);
+            text-align: center;
+            background-image: url('logo-detran.png');
+            background-size: 90%;
+            background-repeat: no-repeat;
+            background-position:center center;
+        }
+        body h2#a{
+            padding: 55px 0px 0px 0px;
+
+        }
+
+        hr {
+            margin: 40px;
+        }
+
+        body > input#bt {
+            background-color: rgb(227, 223, 223);;
+        }
+
+        body > input#bt:hover{
+            color: blue;
+            box-shadow: 2px 2px 4px 1px black;
+            transition: .3s;
+           background-color: white;
+        }
+        
+        footer{
+            background-image: linear-gradient(to top, black,rgba(0, 0, 0, 0.897),rgba(0, 0, 0, 0.850),rgb(61, 61, 61),rgba(90, 90, 90, 0.633), rgb(207, 204, 204));
+             color: white;
+             text-align: center;
+            font-size: 0.8em;
+            padding: 5px;
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+}
+
+        footer a{
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+
+}
+
+        footer a:hover{
+         text-decoration: underline;
+            color: rgb(88, 61, 88);
+}
+
+
+
+    </style>
+</head>
+<header>
+    <h1>Consulta DETRAN</h1>
+</header>
+<body>
+
+    <h2 id="a">Digite seu País</h2>
+
+ País 👉<input type="text" name="pais" id="pais">
+ <input type="button" value="Enviar" onclick="pais()" id="bt">
+ <div id="cid">
+
+ </div>
+
+ <hr>
+
+ <h2>Digite a velocidade atual do seu carro</h2>
+
+ Velocidade do carro:<input type="number" name="velo" id="velo">Km/h
+ <input type="button" value="Verificar" onclick="calcular()" id="bt">
+ <div id="res"></div>
+
+ <script>
+     function calcular() {
+        let vel = window.document.querySelector('input#velo')
+        let res = Number(vel.value)
+        let msg = window.document.querySelector('div#res')
+        if (res > 60) {
+            msg.innerHTML = `Sua velocidade atual é <strong>${res}</strong>Km/h. <strong>M U L T A D O ! !</strong>`
+            window.alert('Sua Velocidade está muito alta. M U L T A D O ! !')
+            
+        }
+        else
+        {
+        msg.innerHTML = `Sua velocidade atual é <strong>${res}</strong>Km/h.`
+        }
+
+    function pais() {
+        let pais = window.document.getElementById('pais')
+        let ps = String(pais.value)
+        
+        if (ps == 'Brasil') {
+            cid.innerHTML = `Voce é Brasileiro com muito orgulho!`
+        }
+        else
+        {
+            cid.innerHTML = `Voce é estrangeiro aqui neste país.`
+        }
+    }
+
+   
+    }
+
+ </script>
+ 
+ <footer>
+    <p>Site criado por <a href="https://pt-br.facebook.com/francisco.devilla.16" target="_blank">Francisco Devilla</a>.</p>
+ </footer>
+</body>
+</html>

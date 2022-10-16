@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro JAVA</title>
+</head>
+<header>
+    <h1>Teste de velocidade</h1>
+</header>
+<body>
+
+    <h2>Digite seu País</h2>
+
+ País<input type="text" name="pais" id="pais">
+ <input type="button" value="Enviar" onclick="pais()">
+ <div id="cid">
+
+ </div>
+
+ <hr>
+
+ <h2>Digite a velocidade atual do seu carro</h2>
+
+ Velocidade do carro:<input type="number" name="velo" id="velo">Km/h
+ <input type="button" value="Verificar" onclick="calcular()">
+ <div id="res"></div>
+
+ <script>
+    function pais() {
+        let pais = window.document.getElementById('pais')
+        let ps = String(pais.value)
+        if (ps == 'Brasil') {
+            cid.innerHTML = `Voce é Brasileiro com muito orgulho!`
+        }
+        else
+        {
+            cid.innerHTML = `Voce é estrangeiro aqui neste país.`
+        }
+    }
+
+    function calcular() {
+        let vel = window.document.querySelector('input#velo')
+        let res = Number(vel.value)
+        let msg = window.document.querySelector('div#res')
+        if (res > 60) {
+            msg.innerHTML = `Sua velocidade atual é <strong>${res}</strong>Km/h. <strong>M U L T A D O ! !</strong>`
+            window.alert('Sua Velocidade está muito alta. M U L T A D O ! !')
+            
+        }
+        else
+        {
+        msg.innerHTML = `Sua velocidade atual é <strong>${res}</strong>Km/h.`
+        }
+
+    }
+
+ </script>
+</body>
+</html>
