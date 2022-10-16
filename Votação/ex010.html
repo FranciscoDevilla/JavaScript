@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style_votacao.css">
+    <title>Votação</title>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Verifique seu status para votação</h1>
+    </header>
+    
+    <section>
+        <div>
+            <h1>Qual a sua idade?</h1>
+        </div>
+        <div id="stat">
+            <input type="text" name="idade" id="idade">
+            <input type="button" value="Verificar" onclick="eleitor()">
+        </div>
+    </section>
+    <section id="horaa">
+        <div id="msg2">
+            Aqui vai aparecer a mensagem...
+
+        </div>
+        <div id="foto">
+            <img id="imagem" src="manhã.jpg" alt="foto do dia">
+        </div>
+        <div id="posMsg">
+
+        </div>
+    </section> 
+    <section id="horaa">
+        <main>
+            <h2>Qual o dia da semana?</h2>
+            <input type="button" value="Ler dia"  onclick="resposta()">
+            <div id="resp"></div>
+        </main>
+    </section>
+    <footer>
+        <p>&copy; By - Francisco Devilla</p>
+    </footer>
+    <script src="script_votação.js"></script>
+</body>
+</html>
