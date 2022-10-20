@@ -18,7 +18,7 @@ function carregar(){
     let msg2 = window.document.getElementById('msg2')
     let img = window.document.getElementById('imagem')
     let data = new Date()
-let hora = data.getHours()
+    let hora =  22//data.getHours()
     let minutos = data.getMinutes()
     msg2.innerHTML = `Agora são ${hora} horas e ${minutos} minutos.`
     if (hora >= 0 && hora <= 11) {

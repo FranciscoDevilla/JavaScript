@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticar</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+        }
+        html {
+            background-color: rgb(60, 132, 156);
+        }
+        header {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 17pt;
+            
+        }
+        section {
+            border: 1px solid white;
+            background-color: white;
+            width: 500px;
+            border-radius: 10px;         
+            margin:auto;
+            box-shadow: 3px 3px 9px #00000048;
+        }
+        div{
+            padding: 0px 15px 15px 15px;
+        }
+        input {
+            margin: 12px;
+        }
+        footer{
+            text-align: center;
+            color: white;
+            font-style: italic;
+        }
+    </style>
+</head>
+<header>
+    <h1>Vamos Contar</h1>
+</header>
+<body>
+    <section>
+        <div>
+         Início: <input type="number" name="pinicio" id="pinicio"><br>
+         Fim: <input type="number" name="pfim" id="Pfim"><br>
+         Passo: <input type="number" name="ppasso" id="Ppasso">
+        </div>
+        <div id="botao" onclick="contar()">
+            <input type="button" value="Contar"><br>
+        </div>
+        <div id="contador">
+            Preparando a Contagem...
+        </div>
+    </section>
+    <footer>
+        <p>&copy;Francisco Devilla</p>
+    </footer>
+    <script>
+        function contar() {
+            let pinicio = window.document.getElementById('pinicio')   
+            let pfim = window.document.getElementById('Pfim')   
+            let ppasso = window.document.getElementById('Ppasso')   
+            let cont = window.document.querySelector('div#contador')
+
+            i = Number(pinicio.value)
+            f = Number(pfim.value)
+            p = Number(ppasso.value)
+
+            if (p <= 0)
+            {
+             window.alert ('Valor do PASSO inválido. Vamos considerar como PASSO valendo 1.')
+                p = 1    
+            }
+               
+
+            if (pinicio.value.length == 0 || pfim.value.length == 0 ) 
+            {
+                window.alert ('[ERRO] Está falntando completar os dados! Verifique os campos: Início ; Fim e Passo.')
+            }
+            else
+            {
+                cont.innerHTML = `Contando:<br>`
+
+                if (i < f) {
+                 for (let c = i; c <= f; c += p){
+                cont.innerHTML += ` ...${c}🦞... `
+                }   
+                }
+                else
+                {
+                    for (let c = i; c >= f; c -= p){
+                cont.innerHTML += ` ...${c}🦞... `
+                }   
+                }
+                cont.innerHTML += `🏁`
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
